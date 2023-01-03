@@ -4,6 +4,6 @@
  * SPDX-License-Identifier: CC0-1.0
  */
 export default {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-};
+	preset: "ts-jest",
+	testEnvironment: "node",
+}
