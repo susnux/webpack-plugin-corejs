@@ -5,3 +5,7 @@ Upstream-Contact: Ferdinand Thiessen <rpm@fthiessen.de>
 Files: package-lock.json package.json
 Copyright: Ferdinand Thiessen <rpm@fthiessen.de>
 License: EUPL-1.2
+
+Files: tsconfig.json tsconfig.common.json tsconfig.cjs.json
+Copyright: Ferdinand Thiessen <rpm@fthiessen.de>
+License: CC0-1.0
