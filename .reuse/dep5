@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: webpack-plugin-corejs
+Upstream-Contact: Ferdinand Thiessen <rpm@fthiessen.de>
+
+Files: package-lock.json package.json
+Copyright: Ferdinand Thiessen <rpm@fthiessen.de>
+License: EUPL-1.2
