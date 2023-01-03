@@ -7,10 +7,12 @@
 import type { Configuration } from "webpack"
 import type { Configuration as WP5Configuration } from "webpack5"
 
-import { build } from "webpack-test-utils"
-import { CoreJSPlugin } from "../src"
 import webpack from "webpack"
 import webpack5 from "webpack5"
+
+import { build } from "webpack-test-utils"
+import { CoreJSPlugin } from "./../src"
+
 
 const configure = (config: Configuration | WP5Configuration) => {
 	config.plugins = [new CoreJSPlugin()]
