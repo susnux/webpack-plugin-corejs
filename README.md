@@ -2,8 +2,9 @@
 SPDX-FileCopyrightText: 2023 Ferdinand Thiessen <rpm@fthiessen.de>
 SPDX-License-Identifier: EUPL-1.2
 --->
-[![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/susnux/webpack-plugin-corejs)](https://github.com/susnux/webpack-plugin-corejs/releases)
+[![GitHub package.json version (main branch)](https://img.shields.io/github/package-json/v/susnux/webpack-plugin-corejs)](https://github.com/susnux/webpack-plugin-corejs/releases)
 [![GitHub Workflow Status (main branch)](https://img.shields.io/github/actions/workflow/status/susnux/webpack-plugin-corejs/node.yml?branch=main)](https://github.com/susnux/webpack-plugin-corejs/actions/workflows/node.yml)
+[![license](https://img.shields.io/npm/l/webpack-plugin-corejs?color=blue)](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12)
 
 # webpack-plugin-corejs
 A webpack plugin for injecting [core-js](https://github.com/zloirock/core-js) polyfills based
