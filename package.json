@@ -15,7 +15,9 @@
 	"license": "EUPL-1.2",
 	"repository": "susnux/webpack-plugin-corejs",
 	"files": [
-		"dist"
+		"dist",
+		"LICENSES",
+		"CHANGELOG.md"
 	],
 	"exports": {
 		"import": "./dist/index.js",
