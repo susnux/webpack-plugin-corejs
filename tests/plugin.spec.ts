@@ -13,11 +13,11 @@ import webpack5 from "webpack5"
 import { build } from "webpack-test-utils"
 import { CoreJSPlugin } from "./../src"
 
-const configure = (config: Configuration | WP5Configuration) => {
-	config.plugins = [new CoreJSPlugin()]
-}
-
 describe("build", () => {
+	const configure = (config: Configuration | WP5Configuration) => {
+		config.plugins = [new CoreJSPlugin()]
+	}
+
 	;[4, 5].forEach((version) => {
 		test(`with wp${version}`, async () => {
 			// Create in-memory file-system
@@ -34,7 +34,7 @@ describe("build", () => {
 
 			// Verify successful build
 			expect(built.stats.hasWarnings()).toBe(false)
-			expect(built.stats.hasWarnings()).toBe(false)
+			expect(built.stats.hasErrors()).toBe(false)
 
 			// Result must contain the CoreJS polyfills
 			expect(
@@ -45,4 +45,42 @@ describe("build", () => {
 			expect(built.require("/dist/index.js")).toBe("12345")
 		})
 	})
+})
+
+test("only add polyfills to initial chunks", async () => {
+	const configure = (config: Configuration | WP5Configuration) => {
+		config.plugins = [new CoreJSPlugin()]
+		config.entry = {
+			index: "/src/index.js",
+		}
+	}
+
+	// Create in-memory file-system
+	const volume = {
+		"/src/foo.js": "export default '12345'",
+		"/src/index.js":
+			"const value = import('./foo.js')\nexport default value",
+	}
+
+	// Run Webpack build
+	const built = await build(volume, configure, webpack)
+
+	// Verify successful build
+	expect(built.stats.hasWarnings()).toBe(false)
+	expect(built.stats.hasErrors()).toBe(false)
+
+	// Only inital chunk must contain the CoreJS polyfills
+	console.log(built.fs.readdirSync("/dist"))
+	expect(built.fs.readFileSync("/dist/index.js").toString()).toContain(
+		"/* CoreJS polyfills */\n"
+	)
+	expect(
+		built.fs
+			.readFileSync("/dist/1.js")
+			.toString()
+			.indexOf("/* CoreJS polyfills */\n")
+	).toBe(-1)
+
+	// Run the code to verify result
+	expect((await built.require("/dist/index.js")).default).toBe("12345")
 })
