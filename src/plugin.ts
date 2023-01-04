@@ -48,6 +48,8 @@ export class CoreJSPlugin {
 				async (chunks) => {
 					const bundle = await builder(this.options)
 					chunks.forEach((chunk) => {
+						if (!chunk.canBeInitial()) return
+
 						chunk.files.forEach((file) => {
 							if (isJsFile.test(file)) {
 								compilation.assets[file] = new ConcatSource(
