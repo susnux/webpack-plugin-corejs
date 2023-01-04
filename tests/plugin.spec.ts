@@ -13,7 +13,6 @@ import webpack5 from "webpack5"
 import { build } from "webpack-test-utils"
 import { CoreJSPlugin } from "./../src"
 
-
 const configure = (config: Configuration | WP5Configuration) => {
 	config.plugins = [new CoreJSPlugin()]
 }
