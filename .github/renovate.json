@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Europe/Berlin",
+  "rebaseWhen": "conflicted",
+  "rangeStrategy": "bump",
+  "commitMessagePrefix": "⬆️",
+  "platformCommit": true,
+  "ignoreUnstable": false,
+  "ignoreDeps": [
+    "node",
+    "npm"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["webpack", "@types/webpack"],
+      "allowedVersions": "<5"
+    },
+    {
+      "matchPackageNames": ["webpack5"],
+      "allowedVersions": "<6"
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "<17"
+    }
+  ]
+}
