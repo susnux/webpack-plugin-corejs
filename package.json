@@ -28,7 +28,8 @@
 		"build": "tsc && tsc --project tsconfig.cjs.json",
 		"format": "prettier --write src '*.{js,mjs,cjs}'",
 		"lint": "prettier --check src '*.{js,mjs,cjs}'",
-		"test": "jest"
+		"test": "jest",
+		"prepack": "npm run build"
 	},
 	"engines": {
 		"node": "^16.0.0"
