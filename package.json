@@ -52,7 +52,7 @@
 		"typescript": "^5.0.4",
 		"webpack": "^4.46.0",
 		"webpack-test-utils": "^2.1.0",
-		"webpack5": "npm:webpack@^5.82.0"
+		"webpack5": "npm:webpack@^5.82.1"
 	},
 	"prettier": {
 		"useTabs": true,
