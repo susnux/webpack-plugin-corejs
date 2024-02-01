@@ -41,12 +41,12 @@
 		"core-js-builder": "^3.30.2"
 	},
 	"devDependencies": {
-		"@types/jest": "^29.5.1",
+		"@types/jest": "^29.5.12",
 		"@types/node": "^16.18.28",
 		"@types/webpack": "^4.41.33",
 		"@types/webpack-sources": "^3.2.0",
 		"browserslist": "^4.21.5",
-		"jest": "^29.5.0",
+		"jest": "^29.7.0",
 		"prettier": "^2.8.8",
 		"ts-jest": "^29.1.0",
 		"typescript": "^5.0.4",
