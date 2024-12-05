@@ -75,11 +75,11 @@ export class CoreJSPlugin {
 									"/* CoreJS polyfills */\n",
 									bundle,
 									"/* Real content */\n",
-									source
+									source,
 								)
 							}
 						})
-					}
+					},
 				)
 			} else {
 				compilation.hooks.optimizeChunkAssets.tapPromise(
@@ -95,12 +95,12 @@ export class CoreJSPlugin {
 										"/* CoreJS polyfills */\n",
 										bundle,
 										"/* Real content */\n",
-										compilation.assets[file]
+										compilation.assets[file],
 									)
 								}
 							})
 						})
-					}
+					},
 				)
 			}
 		})
