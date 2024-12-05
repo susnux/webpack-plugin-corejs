@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [0.2.2] - 2024-12-05
+### Changed
+- Updated dependencies
+
 ## [0.2.1] - 2023-01-04
 ### Changed
 - webpack 4: Only add polyfills to initial chunks
